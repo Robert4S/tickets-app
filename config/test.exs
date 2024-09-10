@@ -11,7 +11,6 @@ config :bcrypt_elixir, :log_rounds, 1
 config :tickets2, Tickets2.Repo,
   database: Path.expand("../tickets2_test.db", __DIR__),
   pool_size: 5,
-  adapter: Ecto.Adapters.SQLite3,
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,

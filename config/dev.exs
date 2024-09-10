@@ -87,8 +87,3 @@ config :phoenix_live_view,
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
-
-config :tickets2, Tickets2.Repo,
-  database: "dev.sqlite3",
-  pool_size: 10,
-  adapter: Ecto.Adapters.SQLite3

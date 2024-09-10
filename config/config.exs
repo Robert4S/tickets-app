@@ -11,6 +11,8 @@ config :tickets2,
   ecto_repos: [Tickets2.Repo],
   generators: [timestamp_type: :utc_datetime]
 
+config :tickets2, Tickets2.Repo, pool_size: 10, ssl: true
+
 # Configures the endpoint
 config :tickets2, Tickets2Web.Endpoint,
   url: [host: "localhost"],
