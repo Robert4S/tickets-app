@@ -33,6 +33,7 @@ database_url =
     """
 
 config :tickets2, Tickets2.Repo,
+  adapter: Ecto.Adapters.Postgres,
   url: database_url,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
