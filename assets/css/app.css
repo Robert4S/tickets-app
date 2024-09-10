@@ -1,0 +1,29 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+.fade-in {
+  opacity: 0;
+  transition: opacity 5s ease-in;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
+
+.pride-flag {
+  background: linear-gradient(
+    to bottom,
+    #ff0000 16.67%, /* Red */
+    #ff8c00 16.67%, /* Orange */
+    #ff8c00 33.34%, /* Orange */
+    #ffff00 33.34%, /* Yellow */
+    #ffff00 50.01%, /* Yellow */
+    #008000 50.01%, /* Green */
+    #008000 66.68%, /* Green */
+    #0000ff 66.68%, /* Blue */
+    #0000ff 83.35%, /* Blue */
+    #8b00ff 83.35%  /* Purple */
+  );
+}
