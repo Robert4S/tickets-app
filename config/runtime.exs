@@ -21,15 +21,22 @@ if System.get_env("PHX_SERVER") do
 end
 
 if config_env() == :prod do
-  database_path =
-    System.get_env("DATABASE_PATH") ||
+  database_url =
+    System.get_env("DATABASE_URL") ||
       raise """
-      environment variable DATABASE_PATH is missing.
-      For example: /etc/tickets2/tickets2.db
+      environment variable DATABASE_URL is missing.
+      For example: ecto://USER:PASS@HOST/DATABASE
       """
 
+  # database_path =
+  #   System.get_env("DATABASE_PATH") ||
+  #     raise """
+  #     environment variable DATABASE_PATH is missing.
+  #     For example: /etc/tickets2/tickets2.db
+  #     """
+
   config :tickets2, Tickets2.Repo,
-    database: database_path,
+    url: database_url,
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "5")
 
   # The secret key base is used to sign/encrypt cookies and other secrets.
