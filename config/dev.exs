@@ -2,8 +2,11 @@ import Config
 
 # Configure your database
 config :tickets2, Tickets2.Repo,
-  database: Path.expand("../tickets2_dev.db", __DIR__),
-  pool_size: 5,
+  # database: Path.expand("../tickets2_dev.db", __DIR__),
+  # pool_size: 5,
+  username: "postgres",
+  password: "mysecretpassword",
+  hostname: "localhost",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true
 
