@@ -16,9 +16,9 @@ config :tickets2, Tickets2.Repo,
 config :tickets2, Tickets2Web.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
-  http: [ip: {172, 21, 0, 67}, port: 4000],
+  http: [ip: {127, 0, 0, 1}, port: 4000],
   https: [
-    ip: {172, 21, 0, 67},
+    ip: {127, 0, 0, 1},
     port: 4001,
     cipher_suite: :strong,
     certfile: "priv/cert/selfsigned.pem",
@@ -87,3 +87,8 @@ config :phoenix_live_view,
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+config :tickets2, Tickets2.Repo,
+  database: "dev.sqlite3",
+  pool_size: 10,
+  adapter: Ecto.Adapters.SQLite3
