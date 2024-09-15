@@ -7,12 +7,13 @@ defmodule Tickets2.Application do
 
   @impl true
   def start(_type, _args) do
+    HTTPoison.start()
+
     children = [
       Tickets2Web.Telemetry,
       Tickets2.Repo,
       {Ecto.Migrator,
-        repos: Application.fetch_env!(:tickets2, :ecto_repos),
-        skip: skip_migrations?()},
+       repos: Application.fetch_env!(:tickets2, :ecto_repos), skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:tickets2, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Tickets2.PubSub},
       # Start the Finch HTTP client for sending emails

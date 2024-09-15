@@ -9,7 +9,7 @@ defmodule Tickets2Web.TicketLive.Dick do
       |> assign(:button_class, "w-32 h-12 transition-all duration-1000")
       |> assign(
         :other_class,
-        "text-7xl text-black font-bold w-full h-80 pride-flag transition-all duration-1000 opacity-1"
+        "text-8xl text-black font-bold w-full h-80 pride-flag hover:border hover:border-gray-500 hover:border-4 transition-all duration-1000 opacity-1"
       )
       |> assign(:wanted_event, "click clicked")
 
